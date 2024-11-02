@@ -20,13 +20,13 @@ jobs:
           dotnet-version: '8.0.x'  
 
       - name: Install dependencies
-        run: dotnet restore
+        run: dotnet restore MyAspNetCoreApp/MyAspNetCoreApp.csproj  
 
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build MyAspNetCoreApp/MyAspNetCoreApp.csproj --no-restore  
 
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test MyAspNetCoreApp/MyAspNetCoreApp.csproj --no-build --verbosity normal 
 
       - name: Build Docker image
         run: |
