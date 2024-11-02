@@ -20,13 +20,13 @@ jobs:
           dotnet-version: '8.0.x'  
 
       - name: Install dependencies
-        run: dotnet restore MyAspNetCoreApp/MyAspNetCoreApp.csproj  
+        run: dotnet restore MyAspNetCoreApp.csproj  # Adjust the path if necessary
 
       - name: Build
-        run: dotnet build MyAspNetCoreApp/MyAspNetCoreApp.csproj --no-restore  
+        run: dotnet build MyAspNetCoreApp.csproj --no-restore  # Adjust the path if necessary
 
       - name: Test
-        run: dotnet test MyAspNetCoreApp/MyAspNetCoreApp.csproj --no-build --verbosity normal 
+        run: dotnet test MyAspNetCoreApp.csproj --no-build --verbosity normal  # Adjust the path if necessary
 
       - name: Build Docker image
         run: |
@@ -41,4 +41,4 @@ jobs:
       - name: Push Docker image
         run: |
           docker tag myaspnetcoreapp:latest syddselin/myaspnetcoreapp:latest  
-          docker push syddselin/myaspnetcoreapp:latest  
+          docker push syddselin/myaspnetcoreapp:latest
