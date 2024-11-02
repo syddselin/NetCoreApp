@@ -20,13 +20,13 @@ jobs:
           dotnet-version: '8.0.x'  
 
       - name: Install dependencies
-        run: dotnet restore MyAspNetCoreApp.csproj  # Adjust the path if necessary
+        run: dotnet restore MyAspNetCoreApp.csproj  
 
       - name: Build
-        run: dotnet build MyAspNetCoreApp.csproj --no-restore  # Adjust the path if necessary
+        run: dotnet build MyAspNetCoreApp.csproj 
 
       - name: Test
-        run: dotnet test MyAspNetCoreApp.csproj --no-build --verbosity normal  # Adjust the path if necessary
+        run: dotnet test MyAspNetCoreApp.csproj --no-build --verbosity normal 
 
       - name: Build Docker image
         run: |
