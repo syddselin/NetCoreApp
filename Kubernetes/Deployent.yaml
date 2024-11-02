@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: myaspnetcoreapp-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: myaspnetcoreapp
@@ -15,12 +15,5 @@ spec:
       containers:
       - name: myaspnetcoreapp
         image: syddselin/myaspnetcoreapp:latest
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
         ports:
-        - containerPort: 80
+        - containerPort: 8080
